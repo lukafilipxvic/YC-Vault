@@ -55,7 +55,7 @@ def get_all_urls(batch_code):
 
 def main():
     """Main script to fetch and save YC company URLs."""
-    batch_file_path = "../data/YC_Batches.csv"
+    batch_file_path = "data/YC_Batches.csv"
 
     # Parse command-line argument for date (optional)
     parser = argparse.ArgumentParser(description="Fetch YC URLs with date.")
@@ -66,7 +66,7 @@ def main():
     max_workers = args.workers
 
     # Define file paths
-    output_dir = f"../data/{date}" if date else "../data"
+    output_dir = f"data/{date}" if date else "data"
     os.makedirs(output_dir, exist_ok=True)
     url_file_path = os.path.join(output_dir, "YC_URLs.csv")
 
@@ -122,10 +122,7 @@ def main():
     except FileNotFoundError:
         new_df.to_csv(url_file_path, index=False)
         print(f"Company URLs saved to {url_file_path} (total: {len(new_df)}).")
-    
-    # Update batch count and save
-    df_batches.to_csv(batch_file_path, index=False)
-    print(f"Batch counts updated in {batch_file_path}.")
+
 
 if __name__ == "__main__":
     main()

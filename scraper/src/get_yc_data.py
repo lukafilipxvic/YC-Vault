@@ -15,15 +15,15 @@ FOUNDER_HEADER = "Name,Batch,Status,Industry,Team Size,Location,Founder's First 
 
 def setup_file_paths(date=None):
     if date:
-        directory = f'../data/{date}'
-        Companies_file_path = f"../data/{date}/YC_Companies.csv"
-        Founders_file_path = f"../data/{date}/YC_Founders.csv"
-        URL_file_path = f"../data/{date}/YC_URLs.csv"
+        directory = f'data/{date}'
+        Companies_file_path = f"data/{date}/YC_Companies.csv"
+        Founders_file_path = f"data/{date}/YC_Founders.csv"
+        URL_file_path = f"data/{date}/YC_URLs.csv"
     else:
-        directory = '../data/'
-        Companies_file_path = "../data/YC_Companies.csv"
-        Founders_file_path = "../data/YC_Founders.csv"
-        URL_file_path = "../data/YC_URLs.csv"
+        directory = 'data/'
+        Companies_file_path = "data/YC_Companies.csv"
+        Founders_file_path = "data/YC_Founders.csv"
+        URL_file_path = "data/YC_URLs.csv"
     os.makedirs(directory, exist_ok=True)
     return Companies_file_path, Founders_file_path, URL_file_path
 
@@ -96,7 +96,7 @@ async def main():
                     if result.markdown is None:
                         continue
 
-                    company_extract = extract_company_details(client, result.markdown, model="openai/gpt-4o-mini")
+                    company_extract = extract_company_details(client, result.markdown, model="openai/gpt-4.1-nano")
                     
                     # Write company data.
                     company_list.write(

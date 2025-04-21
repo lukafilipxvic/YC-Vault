@@ -38,7 +38,7 @@ uv sync
    - This file will need updating as new batches are launched
 2. Run the pipeline:
 ```
-uv run python run_pipeline.py
+uv run python scraper/run_pipeline.py
 ```
 
 ## Performance
@@ -46,13 +46,13 @@ uv run python run_pipeline.py
 ### Time Requirements
 
 - `get_yc_urls.py`: ~2.5 minutes to scrape all YC URLs
-- `get_yc_data.py`: ~3.68 seconds per company (approximately 5.11 hours to scrape 5,000 YC companies synchronously)
+- `get_yc_data.py`: ~2.52 seconds per company (approximately 4.2 hours to scrape 6,000 YC companies synchronously)
 
 ### Cost Analysis
 
-- Using GPT-4o-mini costs approximately $0.00026 to extract one YC company page
-- Total cost for 5,000 YC companies: ~$1.30
-- For comparison, Gumloop costs ~$80.83 for the same data (62.18x more expensive)
+- Using GPT-4.1-nano costs approximately $0.00024 to extract one YC company page
+- Total cost for 6,000 YC companies: ~$1.42
+- For comparison, Gumloop costs ~$80.83 for the same data (56.78x more expensive)
 
 ## Data Structure
 

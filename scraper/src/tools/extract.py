@@ -1,6 +1,6 @@
 from .models import Company_Path, YC_Company
 
-def extract_urls(client, input, model: str = "openai/gpt-4o-mini"):
+def extract_urls(client, input, model: str = "openai/gpt-4.1-nano"):
     data, resp = client.chat.completions.create_with_completion(
         model=model,
         response_model=Company_Path,
@@ -17,7 +17,7 @@ def extract_urls(client, input, model: str = "openai/gpt-4o-mini"):
     )
     return resp.model_dump()
 
-def extract_company_details(client, input, model: str = "openai/gpt-4o-mini"):
+def extract_company_details(client, input, model: str = "openai/gpt-4.1-nano"):
     resp = client.chat.completions.create(
         model=model,
         response_model=YC_Company,

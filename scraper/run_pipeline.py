@@ -9,10 +9,10 @@ data_dir = Path(__file__).resolve().parent.parent / "data" / current_date
 os.makedirs(data_dir, exist_ok=True)
 
 pipeline_steps = [
-    f"uv run python -u src/get_yc_urls.py --date {current_date}",
-    f"uv run python -u src/get_yc_data.py --date {current_date}",
-    #f"uv run python src/generate_statistics.py --date {current_date}",
-    #f"uv run python src/generate_charts.py --date {current_date}",
+    f"uv run python -u scraper/src/get_yc_urls.py --date {current_date}",
+    f"uv run python -u scraper/src/get_yc_data.py --date {current_date}",
+    #f"uv run python scraper/src/generate_statistics.py --date {current_date}",
+    #f"uv run python scraper/src/generate_charts.py --date {current_date}",
 ]
 
 def run_pipeline_steps(steps):
