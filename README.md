@@ -50,9 +50,9 @@ uv run python scraper/run_pipeline.py
 
 ### Cost Analysis
 
-- Using GPT-4.1-nano costs approximately $0.0002 to extract one YC company page
-- Total cost for 6,000 YC companies: ~$1.23
-- For comparison, Gumloop costs ~$48.5 for the same data (39.43x more expensive)
+- Using GPT-4.1-nano, it costs ~$0.0002 to extract one YC company page.
+- Total cost for 6,000 YC companies = ~$1.23
+- For comparison, Gumloop costs ~$48.5 for the same data (39.43x more expensive).
 
 ## Data Structure
 
